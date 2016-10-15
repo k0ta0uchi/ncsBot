@@ -1,5 +1,5 @@
 ## NoCopyrightSounds (NCSBot)
-A [DiscordApp](https://discordapp.com) bot that plays [NCS](https://www.youtube.com/user/NoCopyrightSounds) music in voice channles.
+A [DiscordApp](https://discordapp.com) bot that plays [NCS](https://www.youtube.com/user/NoCopyrightSounds) music in voice channels.
 
 ## Playlists
 > - [NCS: All Releases](https://www.youtube.com/playlist?list=PLRBp0Fe2GpgnIh0AiYKh7o7HnYAej-5ph)

@@ -32,6 +32,8 @@ A [DiscordApp](https://discordapp.com) bot that plays [NCS](https://www.youtube.
 | restart | Restarts the current song or restarts the previous song if there is no current song playing.
 | repeat | Makes the player repeat the currently playing song.
 | reset | Completely resets the player, fixing all errors and clearing the queue.
+| feedback {message} | Sends feedback to the developers.
+| invite | Sends invite link, NOTE: All perms are **REQUIRED**, if not all given the bot will not work properly.
 
 ## Music Types
 > **NOTE:** These types are played with `ncs play {type}`.

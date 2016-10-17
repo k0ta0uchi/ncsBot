@@ -20,7 +20,7 @@ public class NCSBot {
 		startTime = System.currentTimeMillis();
 		try {
 
-			JDA api = new JDABuilder().setBotToken("MjM3NDUxODE3MTMzNDA4MjU3.CuX5Bg.94p11vtaV8m9_sJWWEMemEgstNc")
+			JDA api = new JDABuilder().setBotToken("TOKEN")
 					.addListener(new MusicCommands()).addListener(new BotInfoCommand()).addListener(new HelpCommand())
 					.addListener(new GuildJoinedEvent()).addListener(new InviteCommand())
 					.addListener(new FeedbackCommand())

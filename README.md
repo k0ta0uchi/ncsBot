@@ -55,3 +55,4 @@ A [DiscordApp](https://discordapp.com) bot that plays [NCS](https://www.youtube.
 - [ncsBot Development/Help Guild](https://discord.gg/geCp6mx)
 - [NoCopyrightSounds Youtube](https://youtube.com/user/nocopyrightsounds)
 - [NoCopyrightSounds Twitter](https://twitter.com/NCSounds)
+- [NoCopyrightSounds Website](http://nocopyrightsounds.co.uk)

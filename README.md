@@ -34,6 +34,7 @@ A [DiscordApp](https://discordapp.com) bot that plays [NCS](https://www.youtube.
 | reset | Completely resets the player, fixing all errors and clearing the queue.
 | feedback {message} | Sends feedback to the developers.
 | invite | Sends invite link, NOTE: All perms are **REQUIRED**, if not all given the bot will not work properly.
+| ping | The Bots Ping.
 
 ## Music Types
 > **NOTE:** These types are played with `ncs play {type}`.

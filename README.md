@@ -43,11 +43,11 @@ A [DiscordApp](https://discordapp.com) bot that plays [NCS](https://www.youtube.
 |-----|-----|
 | all | NCS: All Releases
 | electronic | NCS: Electronic
-| indie dance | NCS: Indie Dance
+| indie-dance | NCS: Indie Dance
 | hardstyle | NCS: Hardstyle
 | trap | NCS: Trap
 | drumstep | NCS: Drumstep
-| melodic dubstep | NCS: Melodic Dubstep
+| melodic-dubstep | NCS: Melodic Dubstep
 | dubstep | NCS: Dubstep
 | house | NCS: House
 | drum&base | NCS: Drum & Base

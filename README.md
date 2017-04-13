@@ -28,7 +28,7 @@ A [DiscordApp](https://discordapp.com) bot that plays [NCS](https://www.youtube.
 | skip | Skips the current song, automatically starting the next.
 | nowplaying | Prints information about the currently playing song.
 | list | Lists the songs in the queue.
-| volume [1.0 - 0.0] | Sets the volume of the player. 1.0 being 100%, 0.0 being 0%
+| volume [0 - 100] | Sets the volume of the player. 100 being 100%, 0 being 0%
 | restart | Restarts the current song or restarts the previous song if there is no current song playing.
 | repeat | Makes the player repeat the currently playing song.
 | reset | Completely resets the player, fixing all errors and clearing the queue.

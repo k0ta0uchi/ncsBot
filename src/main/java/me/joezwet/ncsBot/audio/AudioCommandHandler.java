@@ -1,9 +1,11 @@
 package me.joezwet.ncsBot.audio;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
+import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
@@ -18,6 +20,11 @@ public class AudioCommandHandler extends ListenerAdapter {
 
 	private AudioPlayerManager playerManager;
 	private Map<Long, GuildMusicManager> musicManagers;
+
+	public AudioCommandHandler() {
+		this.musicManagers = new HashMap<>();
+		this.playerManager = new DefaultAudioPlayerManager();
+	}
 
 	private synchronized GuildMusicManager getGuildAudioPlayer(Guild guild) {
 		long guildId = Long.parseLong(guild.getId());
@@ -38,21 +45,14 @@ public class AudioCommandHandler extends ListenerAdapter {
 		String msg = event.getMessage().getContent();
 		Guild guild = event.getGuild();
 		if (guild != null) {
-			if (!guild.getId().equals("225504501287747584")) {
-				if(msg.startsWith("ncs")) {
-					event.getChannel().sendMessage("All Commands are disabled for testing!").queue();
-				}
-			} else {
-				if (msg.startsWith("ncs play ")) {
-					loadAndPlay(event.getTextChannel(), msg.substring("ncs play ".length()));
-				}
-
-				if (msg.startsWith("ncs join ")) {
-					joinVoiceChannel(event.getTextChannel());
-				}
-				if (msg.startsWith("ncs idJoin ")) {
-					joinVoiceChannel(event.getTextChannel(), msg.substring("ncs idJoin ".length()));
-				}
+			if (msg.startsWith("ncs play ")) {
+				loadAndPlay(event.getTextChannel(), msg.substring("ncs play ".length()));
+			}
+			if (msg.startsWith("ncs join ")) {
+				joinVoiceChannel(event.getTextChannel());
+			}
+			if (msg.startsWith("ncs idJoin ")) {
+				joinVoiceChannel(event.getTextChannel(), msg.substring("ncs idJoin ".length()));
 			}
 		}
 

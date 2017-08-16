@@ -8,13 +8,20 @@ import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.io.IOException;
+import java.util.stream.Stream;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 public class NCSBot {
 	
 	public static JDA api;
 
 	public static void main(String[] args) {
 		try {
-			api = new JDABuilder(AccountType.BOT).setToken("BOT_TOKEN").addListener(new AudioCommandHandler()).buildBlocking();
+			api = new JDABuilder(AccountType.BOT).setToken(NCSBot.getToken()).addEventListener(new AudioCommandHandler()).buildBlocking();
 		} catch (LoginException e) {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
@@ -25,4 +32,18 @@ public class NCSBot {
 			e.printStackTrace();
 		}
 	}
+
+	public static String getToken() {
+		String path = ".\\config\\bot.json";
+		try (Stream<String> stream = Files.lines(Paths.get(path)); ) {
+			StringBuilder sb = new StringBuilder();
+			stream.forEach(sb::append);
+			JsonObject jsonObj = (JsonObject) new Gson().fromJson(sb.toString(), JsonObject.class);
+			
+			return jsonObj.get("botToken").getAsString();
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+		return null;
+  	}
 }

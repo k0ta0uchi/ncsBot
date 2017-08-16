@@ -1,0 +1,7 @@
+/config/
+/target/
+/.dist/
+/.settings/
+/.vscode/
+/.classpath
+/.project

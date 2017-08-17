@@ -157,6 +157,7 @@ public class AudioCommandHandler extends ListenerAdapter {
 				}
 
 				musicManager.player.destroy();
+				musicManager.scheduler.queue.clear();
 				GuildMusicManager _musicManager = getGuildAudioPlayer(channel.getGuild());
 
 				channel.sendMessage("Loaded playlist: " + playlist.getName()).queue();
@@ -231,6 +232,7 @@ public class AudioCommandHandler extends ListenerAdapter {
 			channel.sendMessage("You need to add me to a voice channel first!").queue();
 			return;
 		}
+		this.trackList = new ArrayList<AudioTrack>();
 		if (audioManager.isConnected()) {
 			this.trackList = new ArrayList<AudioTrack>();
 			for(AudioTrack track: playlist.getTracks()) {

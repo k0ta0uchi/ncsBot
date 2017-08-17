@@ -35,7 +35,7 @@ public class NCSBot {
 	}
 
 	public static String getToken() {
-		String path = "." + File.separator + "config" + File.separator + "bot.json";
+		String path = ".." + File.separator + "config" + File.separator + "bot.json";
 		System.out.println(path);
 		try (Stream<String> stream = Files.lines(Paths.get(path)); ) {
 			StringBuilder sb = new StringBuilder();

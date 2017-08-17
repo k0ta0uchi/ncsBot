@@ -10,6 +10,7 @@ import net.dv8tion.jda.core.exceptions.RateLimitedException;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.io.File;
 import java.io.IOException;
 import java.util.stream.Stream;
 import com.google.gson.Gson;
@@ -34,7 +35,8 @@ public class NCSBot {
 	}
 
 	public static String getToken() {
-		String path = ".\\config\\bot.json";
+		String path = "." + File.separator + "config" + File.separator + "bot.json";
+		System.out.println(path);
 		try (Stream<String> stream = Files.lines(Paths.get(path)); ) {
 			StringBuilder sb = new StringBuilder();
 			stream.forEach(sb::append);

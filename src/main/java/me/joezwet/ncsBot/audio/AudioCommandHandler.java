@@ -114,7 +114,7 @@ public class AudioCommandHandler extends ListenerAdapter {
 				repeat(event.getTextChannel());
 			}
 			if (msg.startsWith("ncs reset")) {
-				repeat(event.getTextChannel());
+				reset(event.getTextChannel());
 			}
 			if (msg.startsWith("ncs pause")) {
 				pauseTrack(event.getTextChannel());

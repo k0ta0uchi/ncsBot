@@ -59,7 +59,7 @@ public class AudioCommandHandler extends ListenerAdapter {
 			if (msg.startsWith("ncs play ")) {
 				String category = msg.substring("ncs play ".length());
 				if(category == null){
-					loadAndPlay(event.getTextChannel(), "PLRBp0Fe2GpgnIh0AiYKh7o7HnYAej-5ph");
+					restart(event.getTextChannel());
 				} else switch(category) {
 					case "all":
 						loadAndPlay(event.getTextChannel(), "PLRBp0Fe2GpgnIh0AiYKh7o7HnYAej-5ph");
@@ -406,7 +406,7 @@ public class AudioCommandHandler extends ListenerAdapter {
 			long guildId = Long.parseLong(guild.getId());
 			GuildMusicManager musicManager = musicManagers.get(guildId);
 			musicManager.scheduler.setRepeating(!musicManager.scheduler.isRepeating());
-            channel.sendMessage("Player was set to: **" + (musicManager.scheduler.isRepeating() ? "repeat" : "not repeat") + "**").queue();
+			channel.sendMessage("Player was set to: **" + (musicManager.scheduler.isRepeating() ? "repeat" : "not repeat") + "**").queue();
 		} else {
 			channel.sendMessage("I am not in a voice channel!").queue();
 		}
